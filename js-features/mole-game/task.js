@@ -7,19 +7,19 @@ let dead = document.getElementById('dead');
 let lost = document.getElementById('lost');
 
 holes.forEach( hole => {
-    holes.onclick = function () {
+    hole.onclick = function () {
         if (hole.classList.contains('hole_has-mole')) {
             dead.textContent = parseInt(dead.textContent) + 1;
         } else {
             lost.textContent = parseInt(lost.textContent) + 1;
         }
 
-        if (dead.textContent === 10) {
+        if (dead.textContent === '10') {
             alert('Вы победили!');
             resetGame();
         }
 
-        if (lost.textContent === 5) {
+        if (lost.textContent === '5') {
             alert('Вы проиграли!');
             resetGame();
         }
