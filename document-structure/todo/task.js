@@ -28,11 +28,11 @@ function addTask(event) {
 
   form.addEventListener('submit', addTask);
 
-  input.addEventListener('keypress', (event) => {
-    if (event.key === 'Enter') {
-      addTask(event);
-    }
-  });
+  // input.addEventListener('keypress', (event) => {
+  //   if (event.key === 'Enter') {
+  //     addTask(event);
+  //   }
+  // });
 
   taskList.addEventListener('click', (event) => {
     if (event.target.classList.contains('task__remove')) {
