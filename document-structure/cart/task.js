@@ -2,6 +2,20 @@ const products = document.querySelectorAll('.product');
 
 const cartProducts = document.querySelector('.cart__products');
 
+const cartTitle = document.querySelector('.cart__title');
+
+function toggleCartVisibility() {
+    if (cartProducts.children.length === 0) {
+        cartTitle.style.display = 'none';
+        cartProducts.style.display = 'none';
+    } else {
+        cartTitle.style.display = 'block';
+        cartProducts.style.display = 'flex';
+    }
+}
+
+// toggleCartVisibility(); хотел изначально скрыть корзину, т.к. она пустая, но всё ломается
+
 products.forEach((product) => {
     const quantityControls = product.querySelector('.product__quantity-controls');
     const quantityValue = product.querySelector('.product__quantity-value');
@@ -44,6 +58,7 @@ products.forEach((product) => {
             const removeButton = cartProduct.querySelector('.cart__product-remove');
             removeButton.addEventListener('click', () => {
                 cartProduct.remove();
+                toggleCartVisibility();
             });
         }
 
